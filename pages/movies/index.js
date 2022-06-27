@@ -16,11 +16,18 @@ export default function Home() {
   return (
     <div className="bg-black h-screen">
       <main className="mx-48">
-        <article className="bg-teal-700">
-          <h1 >search부분 구글검색?으로 구현할 예정</h1>
+        <article className="">
+          <form className="relative" action="/search" method="get" acceptCharset="uft-8">
+            <label className="absolute w-full">
+              <input dir="auto" id="inner_search" name="query" type="text" tabIndex={"1"} autoCorrect="off"
+              autoComplete="off" spellCheck="false" placeholder="영화, TV 프로그램, 인물 검색..."
+              className="py-2.5 rounded-full w-full"/>
+            </label>
+            <input type="submit" value="Search" className="absolute right-0 text-white rounded-full bg-teal-700 font-bold text-md py-2.5 px-6"/>
+          </form>
         </article>
         <article>
-          <h1 className="text-white text-2xl mx-8">What's Popular</h1>
+          <h1 className="text-white text-2xl mx-8 pt-16">What's Popular</h1>
           <div className="flex scrollbar overflow-x-scroll overflow-y-hidden mt-8">
             {movies?.map((movie)=> (
             <div className="mx-4" key={movie.id}>
